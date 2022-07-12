@@ -12,7 +12,11 @@ body {
     font-family: 'Roboto Mono', monospace;
     font-size: 1.6rem;
     background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
-    height: 100vh;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .inicio {
