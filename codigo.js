@@ -177,58 +177,58 @@ function ReiniciarCuadro() {
 function dibujarSubir() {
     if (nJugador === 1) {
         if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png";
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
         }
-        else if (jugador1.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-05.png"
+        else if (jugador1.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-03.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
         }
     }
     if (nJugador === 2) {
         if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png";
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
         }
-        else if (jugador2.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-05.png"
+        else if (jugador2.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-03.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
         }
     }
     if (nJugador === 3) {
         if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png";
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
         }
-        else if (jugador3.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-05.png"
+        else if (jugador3.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-03.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
         }
     }
     if (nJugador === 4) {
         if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png";;
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
         }
-        else if (jugador4.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-05.png"
+        else if (jugador4.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-03.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
         }
     }
 }
@@ -236,118 +236,110 @@ function dibujarSubir() {
 function dibujarBajar() {
     if (nJugador === 1) {
         if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-05.png";
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-05.png")';
         }
-        else if (jugador1.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-08.png"
+        else if (jugador1.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-08.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-02.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-02.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-06.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-06.png")';
         }
     }
     if (nJugador === 2) {
         if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-05.png";
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-05.png")';
         }
-        else if (jugador2.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-08.png"
+        else if (jugador2.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-08.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-02.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-02.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-06.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-06.png")';
         }
     }
     if (nJugador === 3) {
         if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-05.png";
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-05.png")';
         }
-        else if (jugador3.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-08.png"
+        else if (jugador3.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-08.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-02.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-02.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-06.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-06.png")';
         }
     }
     if (nJugador === 4) {
         if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-05.png";
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-05.png")';
         }
-        else if (jugador4.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-08.png"
+        else if (jugador4.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-08.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-02.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-02.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-06.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-06.png")';
         }
     }
 }
 
 function dibujarNormal() {
-    if (nJugador === 1) {
-        if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-02.png";
-        }
-        else if (jugador1.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-09.png"
-        }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-05.png"
-        }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-05.png"
-        }
+    if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+        player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-02.png")';
     }
-    if (nJugador === 2) {
-        if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-02.png";
-        }
-        else if (jugador2.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-09.png"
-        }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-05.png"
-        }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-05.png"
-        }
+    else if (jugador1.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+        player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-09.png")';
     }
-    if (nJugador === 3) {
-        if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-02.png";
-        }
-        else if (jugador3.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-09.png"
-        }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-05.png"
-        }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-05.png"
-        }
+    else if(jugador1.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+        player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-05.png")';
     }
-    if (nJugador === 4) {
-        if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-02.png";
-        }
-        else if (jugador4.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos-09.png"
-        }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-05.png"
-        }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-05.png"
-        }
+    else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+        player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-05.png")';
+    }
+    if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+        player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-02.png")';
+    }
+    else if (jugador2.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+        player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-09.png")';
+    }
+    else if(jugador2.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+        player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-05.png")';
+    }
+    else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+        player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-05.png")';
+    }
+    if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+        player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-02.png")';
+    }
+    else if (jugador3.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+        player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-09.png")';
+    }
+    else if(jugador3.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+        player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-05.png")';
+    }
+    else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+        player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-05.png")';
+    }
+    if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+        player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-02.png")';
+    }
+    else if (jugador4.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+        player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-09.png")';
+    }
+    else if(jugador4.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+        player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-05.png")';
+    }
+    else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+        player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-05.png")';
     }
 }
 
@@ -684,69 +676,69 @@ function preguntar() {
     if (nJugador === 1) {
         pJugador.innerHTML = `Pregunta para ${jugador1.nombre}`;
         if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-03.png";
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-03.png")';
         }
-        else if (jugador1.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png"
+        else if (jugador1.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-08.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
-        else if(jugador1.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-04.png"
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
         }
     }
-    if (nJugador === 2) {
+    else if (nJugador === 2) {
         pJugador.innerHTML = `Pregunta para ${jugador2.nombre}`;
         if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-03.png";
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-03.png")';
         }
-        else if (jugador2.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png"
+        else if (jugador2.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player1.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-08.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
-        else if(jugador2.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player2.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-04.png"
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
         }
     }
-    if (nJugador === 3) {
+    else if (nJugador === 3) {
         pJugador.innerHTML = `Pregunta para ${jugador3.nombre}`;
         if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-03.png";
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-03.png")';
         }
-        else if (jugador3.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png"
+        else if (jugador3.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-08.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
-        else if(jugador3.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player3.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-04.png"
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
         }
     }
     if (nJugador === 4) {
         pJugador.innerHTML = `Pregunta para ${jugador4.nombre}`;
         if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 1/chico 1-03.png";
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1-03.png")';
         }
-        else if (jugador4.personaje = "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png"
+        else if (jugador4.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos_Mesa de trabajo 1.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 2/chico 2-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 2/chico 2-08.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
-        else if(jugador4.personaje = "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player4.style.backgroundImage = "./PERSONAJES/CHICO 4/chica 4-04.png"
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
         }
     }
 }
 
 
 function respuestaCorrecta() {
+    dibujarSubir();
     if(direccion == "ARRIBA") {
-        dibujarSubir();
         if (nJugador == 1) {
             player1.style.top = `${(player1.offsetTop + cantidad)}px`;
             jugador1.posicion = posicionTemporal;
@@ -768,13 +760,12 @@ function respuestaCorrecta() {
             jugador4.fila = filaTemporal;
         }
     }
-    nJugador++;
     ReiniciarCuadro();
 }
 
 function respuestaIncorrecta() {
+    dibujarBajar();
     if(direccion == "ABAJO") {
-        dibujarBajar();
         if (nJugador == 1) {
             player1.style.top = `${(player1.offsetTop - cantidad)}px`;
             player1.posicion = posicionTemporal;
@@ -833,6 +824,7 @@ const borrarPosicion = (posicion, jugador) => {
 }
 
 function avanzar() {
+    dibujarSubir();
     if(numeroCasillas !== 0){
         dado.style.opacity = 0.5;
         dado.style.pointerEvents = 'none';
@@ -1286,6 +1278,7 @@ dado.addEventListener("click", () => {
     let random = Math.floor((Math.random() * (6 - 1 + 1)) + 1);
     avanzarCasillas.innerHTML = random;
     numeroCasillas = random;
+    dibujarNormal();
     avanzar();
 })
 
