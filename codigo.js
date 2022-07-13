@@ -701,7 +701,7 @@ function preguntar() {
             player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
         else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
+            player1.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-12.png")';
         }
     }
     else if (nJugador === 2) {
@@ -716,7 +716,7 @@ function preguntar() {
             player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
         else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
+            player2.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-12.png")';
         }
     }
     else if (nJugador === 3) {
@@ -731,7 +731,7 @@ function preguntar() {
             player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
         else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
+            player3.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-12.png")';
         }
     }
     if (nJugador === 4) {
@@ -746,7 +746,7 @@ function preguntar() {
             player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-08.png")';
         }
         else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
-            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-04.png")';
+            player4.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4-12.png")';
         }
     }
 }
@@ -797,7 +797,7 @@ function respuestaCorrecta() {
             turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
             decir(`Turno de ${jugador4.nombre}`);
         }
-        avanzarCasillas.innerHTML = "";
+        avanzarCasillas.style.backgroundImage = "url('')";
     }
     ReiniciarCuadro();
 }
@@ -847,7 +847,7 @@ function respuestaIncorrecta() {
             turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
             decir(`Turno de ${jugador4.nombre}`);
         }
-        avanzarCasillas.innerHTML = "";
+        avanzarCasillas.style.backgroundImage = "url('')";
     }
     ReiniciarCuadro();
 }
@@ -1316,11 +1316,11 @@ function avanzar() {
             turnoNombre.innerText = `Turno de ${jugador2.nombre}`;
             decir(`Turno de ${jugador2.nombre}`);
         }
-        else if(nJugador === 3) {
+        else if(nJugador === 3 && numeroJugadores > 2) {
             turnoNombre.innerText = `Turno de ${jugador3.nombre}`;
             decir(`Turno de ${jugador3.nombre}`);
         }
-        else if(nJugador === 4) {
+        else if(nJugador === 4 && numeroJugadores > 3) {
             turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
             decir(`Turno de ${jugador4.nombre}`);
         }
@@ -1329,7 +1329,7 @@ function avanzar() {
             turnoNombre.innerText = `Turno de ${jugador1.nombre}`;
             decir(`Turno de ${jugador1.nombre}`);
         }
-        avanzarCasillas.innerHTML = "";
+        avanzarCasillas.style.backgroundImage = "url('')";
         dado.style.opacity = 1;
         dado.style.pointerEvents = 'unset';
     }
@@ -1353,7 +1353,31 @@ player4.addEventListener("transitionend", () => {
 
 dado.addEventListener("click", () => {
     let random = Math.floor((Math.random() * (6 - 1 + 1)) + 1);
-    avanzarCasillas.innerHTML = random;
+    let textoDecirCara = `Avanzar ${random} casillas`;
+    if (random == 1) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-01.png")';
+        decir(textoDecirCara);
+    }
+    else if (random == 2) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-02.png")';
+        decir(textoDecirCara);
+    }
+    else if (random == 3) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-03.png")';
+        decir(textoDecirCara);
+    }
+    else if (random == 4) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-04.png")';
+        decir(textoDecirCara);
+    }
+    else if (random == 5) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-05.png")';
+        decir(textoDecirCara);
+    }
+    else if (random == 6) {
+        avanzarCasillas.style.backgroundImage = 'url("./dados/DADOS-06.png")';
+        decir(textoDecirCara);
+    }
     numeroCasillas = random;
     dibujarNormal();
     avanzar();

@@ -476,9 +476,12 @@ body {
     justify-content: center;
 }
 
-.lanzar-dado__parrafo p {
-    font-size: 4rem;
-    color: #fff;
+.lanzar-dado__parrafo div {
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .lanzar-dado__boton {
