@@ -41,11 +41,19 @@ const mGanador = document.getElementById("ganador");
 const textoGanador = document.getElementById("texto-ganador");
 const personajeGanador = document.getElementById("personaje-ganador");
 const botonGanador = document.getElementById("boton-ganador");
+const textoRespuestaCorrecta = document.getElementById("respuestaCorrecta");
+const botonRespuestaCorrecta = document.getElementById("continuarRespuestaCorrecta");
+const mRespuestaCorrecta = document.getElementById("mRespuestaCorrecta");
 
 sonido.volume = 0.25;
 
 sonido.addEventListener("ended", () => {
     sonido.play();
+});
+
+botonRespuestaCorrecta.addEventListener("click", () => {
+    mRespuestaCorrecta.classList.remove("modal-pregunta-incorrecta--show");
+    textoRespuestaCorrecta.innerHTML = "";
 });
 
 let numeroJugadores;
@@ -849,6 +857,16 @@ function respuestaIncorrecta() {
         }
         avanzarCasillas.style.backgroundImage = "url('')";
     }
+    if(Respuesta == 1) {
+        textoRespuestaCorrecta.innerHTML = respuesta1.innerHTML;
+    }
+    else if(Respuesta == 2) {
+        textoRespuestaCorrecta.innerHTML = respuesta2.innerHTML;
+    }
+    else if(Respuesta == 3) {
+        textoRespuestaCorrecta.innerHTML = respuesta3.innerHTML;
+    }
+    mRespuestaCorrecta.classList.add("modal-pregunta-incorrecta--show");
     ReiniciarCuadro();
 }
 
