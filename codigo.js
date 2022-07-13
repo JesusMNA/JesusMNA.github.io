@@ -36,6 +36,15 @@ const pregunta = document.getElementById("pregunta");
 const respuesta1 = document.getElementById("respuesta1");
 const respuesta2 = document.getElementById("respuesta2");
 const respuesta3 = document.getElementById("respuesta3");
+const sonido = document.getElementById("sonido");
+
+sonido.play();
+
+sonido.volume = 0.25;
+
+sonido.addEventListener("ended", () => {
+    sonido.play();
+});
 
 let numeroJugadores;
 let nJugador = 0;
