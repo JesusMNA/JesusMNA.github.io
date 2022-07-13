@@ -59,7 +59,7 @@ body {
     width: 130px;
     height: 40px;
     margin-bottom: 80px;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
     border: 3px solid rgb(227, 16, 16);
     border-radius: 10px;
@@ -742,4 +742,68 @@ body {
 
 .seleccionado-temporal {
     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.5);
+}
+
+.modal-ganador {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #222222bd;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 600ms ease;
+}
+
+.modal-ganador--show {
+    opacity: 1;
+    display: flex;
+    pointer-events: unset;
+}
+
+.modal-ganador-contenido {
+    width: 300px;
+    height: 400px;
+    background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #252424bd;
+}
+
+.modal-ganador-contenido h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.modal-ganador-contenido div {
+    width: 130px;
+    height: 130px;
+    background-position: center;
+    background-size: contain;
+}
+
+.modal-ganador-contenido button {
+    width: 130px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.modal-ganador-contenido button:hover {
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
 }

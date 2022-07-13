@@ -37,6 +37,10 @@ const respuesta1 = document.getElementById("respuesta1");
 const respuesta2 = document.getElementById("respuesta2");
 const respuesta3 = document.getElementById("respuesta3");
 const sonido = document.getElementById("sonido");
+const mGanador = document.getElementById("ganador");
+const textoGanador = document.getElementById("texto-ganador");
+const personajeGanador = document.getElementById("personaje-ganador");
+const botonGanador = document.getElementById("boton-ganador");
 
 sonido.volume = 0.25;
 
@@ -58,6 +62,10 @@ const jugador1 = new Jugador({ nombre: "", personaje: "", numeroJugador: 1 });
 const jugador2 = new Jugador({ nombre: "", personaje: "", numeroJugador: 2 });
 const jugador3 = new Jugador({ nombre: "", personaje: "", numeroJugador: 3 });
 const jugador4 = new Jugador({ nombre: "", personaje: "", numeroJugador: 4 });
+
+botonGanador.addEventListener("click", () => {
+    window.location.reload();
+})
 
 btnIniciar.addEventListener("click", () => {
     sonido.play();
@@ -768,6 +776,29 @@ function respuestaCorrecta() {
             jugador4.fila = filaTemporal;
         }
     }
+    else {
+        nJugador++;
+        if (nJugador === 5) {
+            nJugador = 1;
+        }
+        if (nJugador === 1) {
+            turnoNombre.innerText = `Turno de ${jugador1.nombre}`;
+            decir(`Turno de ${jugador1.nombre}`);
+        }
+        if (nJugador === 2) {
+            turnoNombre.innerText = `Turno de ${jugador2.nombre}`;
+            decir(`Turno de ${jugador2.nombre}`);
+        }
+        if (nJugador === 3) {
+            turnoNombre.innerText = `Turno de ${jugador3.nombre}`;
+            decir(`Turno de ${jugador3.nombre}`);
+        }
+        if (nJugador === 4) {
+            turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
+            decir(`Turno de ${jugador4.nombre}`);
+        }
+        avanzarCasillas.innerHTML = "";
+    }
     ReiniciarCuadro();
 }
 
@@ -776,26 +807,48 @@ function respuestaIncorrecta() {
     if(direccion == "ABAJO") {
         if (nJugador == 1) {
             player1.style.top = `${(player1.offsetTop - cantidad)}px`;
-            player1.posicion = posicionTemporal;
-            player1.fila = filaTemporal;
+            jugador1.posicion = posicionTemporal;
+            jugador1.fila = filaTemporal;
         }
         else if (nJugador == 2) {
             player2.style.top = `${(player2.offsetTop - cantidad)}px`;
-            player2.posicion = posicionTemporal;
-            player2.fila = filaTemporal;
+            jugador2.posicion = posicionTemporal;
+            jugador2.fila = filaTemporal;
         }
         else if (nJugador == 3) {
             player3.style.top = `${(player3.offsetTop - cantidad)}px`;
-            player3.posicion = posicionTemporal;
-            player3.fila = filaTemporal;
+            jugador3.posicion = posicionTemporal;
+            jugador3.fila = filaTemporal;
         }
         else if (nJugador == 4) {
             player4.style.top = `${(player4.offsetTop - cantidad)}px`;
-            player4.posicion = posicionTemporal;
-            player4.fila = filaTemporal;
+            jugador4.posicion = posicionTemporal;
+            jugador4.fila = filaTemporal;
         }
     }
-    nJugador++;
+    else {
+        nJugador++;
+        if (nJugador === 5) {
+            nJugador = 1;
+        }
+        if (nJugador === 1) {
+            turnoNombre.innerText = `Turno de ${jugador1.nombre}`;
+            decir(`Turno de ${jugador1.nombre}`);
+        }
+        if (nJugador === 2) {
+            turnoNombre.innerText = `Turno de ${jugador2.nombre}`;
+            decir(`Turno de ${jugador2.nombre}`);
+        }
+        if (nJugador === 3) {
+            turnoNombre.innerText = `Turno de ${jugador3.nombre}`;
+            decir(`Turno de ${jugador3.nombre}`);
+        }
+        if (nJugador === 4) {
+            turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
+            decir(`Turno de ${jugador4.nombre}`);
+        }
+        avanzarCasillas.innerHTML = "";
+    }
     ReiniciarCuadro();
 }
 
@@ -833,6 +886,22 @@ const borrarPosicion = (posicion, jugador) => {
 
 function avanzar() {
     dibujarSubir();
+    if(jugador1.posicion === 60) {
+        ganador();
+        return;
+    }
+    else if(jugador2.posicion === 60) {
+        ganador();
+        return;
+    }
+    else if(jugador3.posicion === 60) {
+        ganador();
+        return;
+    }
+    else if(jugador4.posicion === 60) {
+        ganador();
+        return;
+    }
     if(numeroCasillas !== 0){
         dado.style.opacity = 0.5;
         dado.style.pointerEvents = 'none';
@@ -1243,7 +1312,7 @@ function avanzar() {
             }
         }
         nJugador++;
-        if(nJugador === 2) {
+        if(nJugador === 2 && numeroJugadores > 1) {
             turnoNombre.innerText = `Turno de ${jugador2.nombre}`;
             decir(`Turno de ${jugador2.nombre}`);
         }
@@ -1290,8 +1359,72 @@ dado.addEventListener("click", () => {
     avanzar();
 })
 
-function ganador(ganador) {
-
+function ganador() {
+    mGanador.classList.add("modal-ganador--show");
+    if (nJugador === 1) {
+        textoGanador.innerHTML = `¡Felicidades ${jugador1.nombre}! eres el ganador`;
+        decir(`¡Felicidades ${jugador1.nombre}! eres el ganador`);
+        if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+        }
+        else if (jugador1.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+        }
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
+        }
+        else if(jugador1.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+        }
+    }
+    if (nJugador === 2) {
+        textoGanador.innerHTML = `¡Felicidades ${jugador2.nombre}! eres el ganador`;
+        decir(`¡Felicidades ${jugador2.nombre}! eres el ganador`);
+        if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+        }
+        else if (jugador2.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+        }
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
+        }
+        else if(jugador2.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+        }
+    }
+    if (nJugador === 3) {
+        textoGanador.innerHTML = `¡Felicidades ${jugador3.nombre}! eres el ganador`;
+        decir(`¡Felicidades ${jugador3.nombre}! eres el ganador`);
+        if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+        }
+        else if (jugador3.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+        }
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
+        }
+        else if(jugador3.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+        }
+    }
+    if (nJugador === 4) {
+        textoGanador.innerHTML = `¡Felicidades ${jugador4.nombre}! eres el ganador`;
+        decir(`¡Felicidades ${jugador4.nombre}! eres el ganador`);
+        if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+        }
+        else if (jugador4.personaje == "./PERSONAJES/CHICO 3/chica 3 todos-09.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+        }
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 2/chico 2-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 2/chico 2-03.png")';
+        }
+        else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
+            personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+        }
+    }
 }
 
 function jugar() {
