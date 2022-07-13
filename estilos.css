@@ -18,6 +18,10 @@ body {
     display: none;
 }
 
+#visitas {
+    margin-right: 150px;
+}
+
 .inicio {
     /* width: 100%;
     height: 100%; */
@@ -46,20 +50,21 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+    justify-content: end;
+    align-items: center;
 }
 
 .inicio-banner button{
-    width: 100px;
-    height: 35px;
+    width: 130px;
+    height: 40px;
     margin-bottom: 80px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    border: 3px solid #ba1a8e;
+    border: 3px solid rgb(227, 16, 16);
     border-radius: 10px;
     color: #fff;
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 .inicio-banner button:hover {
