@@ -44,6 +44,9 @@ const botonGanador = document.getElementById("boton-ganador");
 const textoRespuestaCorrecta = document.getElementById("respuestaCorrecta");
 const botonRespuestaCorrecta = document.getElementById("continuarRespuestaCorrecta");
 const mRespuestaCorrecta = document.getElementById("mRespuestaCorrecta");
+const mInstrucciones = document.getElementById("mInstrucciones");
+const regresarInstrucciones = document.getElementById("regresarInsrucciones");
+const instrucciones = document.getElementById("btn-instrucciones");
 
 sonido.volume = 0.25;
 
@@ -55,6 +58,14 @@ botonRespuestaCorrecta.addEventListener("click", () => {
     mRespuestaCorrecta.classList.remove("modal-pregunta-incorrecta--show");
     textoRespuestaCorrecta.innerHTML = "";
 });
+
+regresarInstrucciones.addEventListener("click", () => {
+    mInstrucciones.classList.remove("modal-instrucciones--show");
+})
+
+instrucciones.addEventListener("click", () => {
+    mInstrucciones.classList.add("modal-instrucciones--show");
+})
 
 let numeroJugadores;
 let nJugador = 0;
