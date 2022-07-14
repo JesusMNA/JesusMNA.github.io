@@ -13,6 +13,7 @@
     <audio src="./Sonidos/Carnival De Brazil.mp3" id="sonido"></audio>
     <section class="inicio inicio--show" id="modal-inicio">
         <div class="inicio-banner">
+            <button id="listaJugadores">Jugadores</button>
             <center id="visitas">
                 <img style="border: 0px solid; display: inline;" src="https://websmultimedia.com/contador-de-visitas.php?id=3580">
             </center>
@@ -150,6 +151,14 @@
         <div class="modal-ganador-contenido">
             <h1 id="texto-ganador">¡Felicidades Jesus! eres el ganador</h1>
             <div id="personaje-ganador"></div>
+            <div id="parrafo-ganador">
+                <p>
+                    ¡Gracias por participar! Al final de este año, el
+                    participante y la institución educativa que reúnan más jugadas ganarán un premio que será
+                    entregado por el IEPC, así que puedes jugar las veces que quieras e invitar a tus compañeros y
+                    compañeras de clase a participar.
+                </p>
+            </div>
             <button id="boton-ganador">Continuar</button>
         </div>
     </section>
@@ -196,6 +205,27 @@
             </div>
         </div>
     </section>
+
+    <section class="mLista-jugadores" id="mListaJugadores">
+        <div class="mLista-jugadores-contenido">
+            <div class="mLista-jugadores-contenido__encabezado">
+                <h1>Lista de jugadores</h1>
+                <div class="encabezado-botones">
+                    <Button>Ninguna</Button> 
+                    <Button>Institución</Button> 
+                    <Button>Victorias</Button> 
+                    <Button>Visitas</Button> 
+                </div>
+            </div>
+            <div class="mLista-jugadores-contenido__cuerpo" id="cuerpoListaJugadores">
+            </div>
+            <div class="mLista-jugadores-contenido__cierre">
+                <button id="cerrarListaJugadores">Cerrar</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="jugadores.js"></script>
     <script src="codigo.js"></script>
 </body>
 

@@ -47,6 +47,10 @@ const mRespuestaCorrecta = document.getElementById("mRespuestaCorrecta");
 const mInstrucciones = document.getElementById("mInstrucciones");
 const regresarInstrucciones = document.getElementById("regresarInsrucciones");
 const instrucciones = document.getElementById("btn-instrucciones");
+const listaJugadores = document.getElementById("listaJugadores");
+const modalListaJugadores = document.getElementById("mListaJugadores");
+const cerrarListaJugadores = document.getElementById("cerrarListaJugadores");
+const cuerpoListaJugadores = document.getElementById("cuerpoListaJugadores");
 
 sonido.volume = 0.25;
 
@@ -65,6 +69,40 @@ regresarInstrucciones.addEventListener("click", () => {
 
 instrucciones.addEventListener("click", () => {
     mInstrucciones.classList.add("modal-instrucciones--show");
+})
+
+function imprimirJugadores(filtro) {
+    let registroJugadores = obtenerListaJugadores();
+    if (registroJugadores.length) {
+        if (filtro == "nada") {
+            cuerpoListaJugadores.innerHTML = "";
+            registroJugadores.forEach(jugador => {
+                let jsonJugador = document.createElement('p');
+                jsonJugador.innerText = `Institución: ${jugador.institucion}
+                Nombre: ${jugador.nombre}
+                Grado: ${jugador.grado}
+                Grupo: ${jugador.grupo}
+                Visitas: ${jugador.visitas}
+                Victorias: ${jugador.victorias}`;
+                cuerpoListaJugadores.appendChild(jsonJugador);
+            })
+        }
+    }
+    else {
+        cuerpoListaJugadores.innerHTML = "";
+        let mensajeVacio = document.createElement('p');
+        mensajeVacio.innerText = "Aún no se ha registrado ningún jugador";
+        cuerpoListaJugadores.appendChild(mensajeVacio)
+    }
+}
+
+listaJugadores.addEventListener("click", () => {
+    modalListaJugadores.classList.add("mLista-jugadores--show");
+    imprimirJugadores("nada");
+})
+
+cerrarListaJugadores.addEventListener("click", () => {
+    modalListaJugadores.classList.remove("mLista-jugadores--show");
 })
 
 let numeroJugadores;
@@ -618,6 +656,7 @@ function Jugador({
     this.posicion = 1;
     this.numeroJugador = numeroJugador;
     this.fila = 1;
+    this.victoria = 0;
 }
 
 function preguntar() {
@@ -1415,6 +1454,7 @@ dado.addEventListener("click", () => {
 function ganador() {
     mGanador.classList.add("modal-ganador--show");
     if (nJugador === 1) {
+        jugador1.victoria = 1;
         textoGanador.innerHTML = `¡Felicidades ${jugador1.nombre}! eres el ganador`;
         decir(`¡Felicidades ${jugador1.nombre}! eres el ganador`);
         if (jugador1.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
@@ -1431,6 +1471,7 @@ function ganador() {
         }
     }
     if (nJugador === 2) {
+        jugador2.victoria = 1;
         textoGanador.innerHTML = `¡Felicidades ${jugador2.nombre}! eres el ganador`;
         decir(`¡Felicidades ${jugador2.nombre}! eres el ganador`);
         if (jugador2.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
@@ -1447,6 +1488,7 @@ function ganador() {
         }
     }
     if (nJugador === 3) {
+        jugador3.victoria = 1;
         textoGanador.innerHTML = `¡Felicidades ${jugador3.nombre}! eres el ganador`;
         decir(`¡Felicidades ${jugador3.nombre}! eres el ganador`);
         if (jugador3.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
@@ -1463,6 +1505,7 @@ function ganador() {
         }
     }
     if (nJugador === 4) {
+        jugador4.victoria = 1;
         textoGanador.innerHTML = `¡Felicidades ${jugador4.nombre}! eres el ganador`;
         decir(`¡Felicidades ${jugador4.nombre}! eres el ganador`);
         if (jugador4.personaje == "./PERSONAJES/CHICO 1/chico 1-02.png") {
@@ -1477,6 +1520,24 @@ function ganador() {
         else if(jugador4.personaje == "./PERSONAJES/CHICO 4/chica 4-05.png") {
             personajeGanador.style.backgroundImage = 'url("./PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
         }
+    }
+    if(numeroJugadores == 1) {
+        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+    }
+    else if(numeroJugadores == 2) {
+        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+    }
+    else if(numeroJugadores == 3) { 
+        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+        agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
+    }
+    else if(numeroJugadores == 4) { 
+        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+        agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
+        agregarDatosJugadores((jugador4.institucion).toLowerCase(), jugador4.grado, (jugador4.grupo).toLowerCase(), (jugador4.nombre).toLowerCase(), jugador4.victoria);
     }
 }
 

@@ -54,6 +54,20 @@ body {
     flex-direction: column-reverse;
     justify-content: end;
     align-items: center;
+    position: relative;
+}
+
+.inicio-banner button {
+    width: 100px;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    border: none;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .inicio-banner-botones {
@@ -73,6 +87,8 @@ body {
     border-radius: 10px;
     color: #fff;
     font-size: 2rem;
+    position: relative;
+    text-decoration: none;
 }
 
 .inicio-banner-botones #btn-instrucciones {
@@ -792,6 +808,7 @@ body {
 
 .modal-ganador-contenido {
     width: 80%;
+    min-width: 300px;
     height: 90vh;
     background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
     background-position: center;
@@ -810,11 +827,27 @@ body {
     font-size: 2.4rem;
 }
 
-.modal-ganador-contenido div {
+.modal-ganador-contenido #personaje-ganador {
     width: 130px;
     height: 130px;
+    background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    background-image: url("./PERSONAJES/CHICO\ 1/chico 1-02.png");
+}
+
+.modal-ganador-contenido #parrafo-ganador {
+    width: 90%;
+    height: 150px;
+    overflow-y: auto;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal-ganador-contenido p {
+    color: #fff;
+    font-size: 1.8rem;
 }
 
 .modal-ganador-contenido button {
@@ -857,6 +890,7 @@ body {
 .modal-pregunta-incorrecta__contenido {
     width: 80vw;
     height: 90vh;
+    min-width: 300px;
     background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
     background-position: center;
     background-size: cover;
@@ -919,6 +953,7 @@ body {
 
 .modal-instrucciones-panel {
     width: 80%;
+    min-width: 300px;
     height: 90vh;
     background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
     background-position: center;
@@ -978,5 +1013,117 @@ body {
 }
 
 .modal-instrucciones-panel__boton button:hover {
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
+}
+
+.mLista-jugadores {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #222222bd;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 600ms ease;
+}
+
+.mLista-jugadores--show {
+    opacity: 1;
+    display: flex;
+    pointer-events: unset;
+}
+
+.mLista-jugadores-contenido {
+    width: 80%;
+    min-width: 300px;
+    height: 90vh;
+    background-image: url("./FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.mLista-jugadores-contenido__encabezado {
+    width: 90%;
+    height: 20%;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mLista-jugadores-contenido__encabezado h1 {
+    margin: 0;
+    color: #fff;
+}
+
+.encabezado-botones {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.encabezado-botones button {
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1.6rem;
+}
+
+.encabezado-botones button:hover {
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
+}
+
+.mLista-jugadores-contenido__cuerpo {
+    width: 90%;
+    height: 70%;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.mLista-jugadores-contenido__cuerpo p {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.mLista-jugadores-contenido__cierre {
+    width: 90%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #fff;
+}
+
+.mLista-jugadores-contenido__cierre button {
+    width: 130px;
+    height: 35px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.mLista-jugadores-contenido__cierre button:hover {
     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
 }
