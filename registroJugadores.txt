@@ -1,0 +1,16 @@
+{
+    institucion: "tecno",
+    grado: "3",
+    grupo: "b",
+    nombre: "Jesus",
+    visitas: 1,
+    victorias: 0
+},
+{
+    institucion: "ujed",
+    grado: "2",
+    grupo: "a",
+    nombre: "Aranza",
+    visitas: 3,
+    victorias: 1
+},
