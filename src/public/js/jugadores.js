@@ -1,38 +1,36 @@
-let jugadores = [];
 
-function agregarDatosJugadores(institucion, grado, grupo, nombre, victoria) {
-    if(jugadores.length != 0) {
-        jugadores.forEach(jugador => {
-            if(jugador.institucion == institucion && jugador.grado == grado &&  jugador.grupo == grupo && jugador.nombre == nombre) {
-                jugador.visitas++;
-                jugador.victorias += victoria; 
-            }
-            else {
-                let nuevoJugador = {
-                    institucion: institucion,
-                    grado: grado,
-                    grupo: grupo,
-                    nombre: nombre,
-                    visitas: 1,
-                    victorias: victoria
-                }
-                jugadores.push(nuevoJugador);
-            }
-        })
+async function consultarListaJugadores() {
+    const response = await fetch("http://localhost:3000/consultar");
+    const data = await response.text();
+    if(response.status !== 200) {
+        spanError.innerHTML = "Hubo un error: " + response.status + " " + data.message;
     }
     else {
-        let nuevoJugador = {
-            institucion: institucion,
-            grado: grado,
-            grupo: grupo,
-            nombre: nombre,
-            visitas: 1,
-            victorias: victoria
-        }
-        jugadores.push(nuevoJugador);
+        return data;
     }
 }
 
-function obtenerListaJugadores() {
-    return jugadores;
+async function agregarDatosJugadores(institucion, grado, grupo, nombre, victoria) {
+    let cuerpo = `{"institucion": "${institucion}","grado": "${grado}", "grupo": "${grupo}", "nombre": "${nombre}", "victoria": ${victoria}}`;
+    let cuerpoJSON = JSON.parse(cuerpo);
+    console.log(cuerpoJSON);
+    console.log(JSON.stringify(cuerpoJSON));
+    const res = await fetch(`http://localhost:3000/agregarJugador`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: cuerpo
+    });
+
+    const data = await res.json();
+
+    if(res.status !== 200) {
+        console.log("Hubo un error: " + res.status + " " + data.message);
+    }
+}
+
+async function obtenerListaJugadores() {
+    let jugadoresRegistrados = await consultarListaJugadores();
+    return jugadoresRegistrados;
 }

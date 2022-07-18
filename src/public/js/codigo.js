@@ -71,22 +71,13 @@ instrucciones.addEventListener("click", () => {
     mInstrucciones.classList.add("modal-instrucciones--show");
 })
 
-function imprimirJugadores(filtro) {
-    let registroJugadores = obtenerListaJugadores();
-    if (registroJugadores.length) {
-        if (filtro == "nada") {
-            cuerpoListaJugadores.innerHTML = "";
-            registroJugadores.forEach(jugador => {
-                let jsonJugador = document.createElement('p');
-                jsonJugador.innerText = `Institución: ${jugador.institucion}
-                Nombre: ${jugador.nombre}
-                Grado: ${jugador.grado}
-                Grupo: ${jugador.grupo}
-                Visitas: ${jugador.visitas}
-                Victorias: ${jugador.victorias}`;
-                cuerpoListaJugadores.appendChild(jsonJugador);
-            })
-        }
+async function imprimirJugadores() {
+    let registroJugadores = await obtenerListaJugadores();
+    if (registroJugadores.length > 0) {
+        cuerpoListaJugadores.innerHTML = "";
+        let jsonJugador = document.createElement('p');
+        jsonJugador.innerText = registroJugadores;
+        cuerpoListaJugadores.appendChild(jsonJugador);
     }
     else {
         cuerpoListaJugadores.innerHTML = "";
@@ -1223,7 +1214,7 @@ dado.addEventListener("click", () => {
     avanzar();
 })
 
-function ganador() {
+async function ganador() {
     mGanador.classList.add("modal-ganador--show");
     if (nJugador === 1) {
         jugador1.victoria = 1;
@@ -1294,22 +1285,22 @@ function ganador() {
         }
     }
     if(numeroJugadores == 1) {
-        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        await agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
     }
     else if(numeroJugadores == 2) {
-        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
-        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+        await agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        await agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
     }
     else if(numeroJugadores == 3) { 
-        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
-        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
-        agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
+        await agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        await agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+        await agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
     }
     else if(numeroJugadores == 4) { 
-        agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
-        agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
-        agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
-        agregarDatosJugadores((jugador4.institucion).toLowerCase(), jugador4.grado, (jugador4.grupo).toLowerCase(), (jugador4.nombre).toLowerCase(), jugador4.victoria);
+        await agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
+        await agregarDatosJugadores((jugador2.institucion).toLowerCase(), jugador2.grado, (jugador2.grupo).toLowerCase(), (jugador2.nombre).toLowerCase(), jugador2.victoria);
+        await agregarDatosJugadores((jugador3.institucion).toLowerCase(), jugador3.grado, (jugador3.grupo).toLowerCase(), (jugador3.nombre).toLowerCase(), jugador3.victoria);
+        await agregarDatosJugadores((jugador4.institucion).toLowerCase(), jugador4.grado, (jugador4.grupo).toLowerCase(), (jugador4.nombre).toLowerCase(), jugador4.victoria);
     }
 }
 

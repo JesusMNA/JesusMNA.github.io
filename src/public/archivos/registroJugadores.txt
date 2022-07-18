@@ -1,16 +1,37 @@
-{
-    institucion: "tecno",
-    grado: "3",
-    grupo: "b",
-    nombre: "Jesus",
-    visitas: 1,
-    victorias: 0
-},
-{
-    institucion: "ujed",
-    grado: "2",
-    grupo: "a",
-    nombre: "Aranza",
-    visitas: 3,
-    victorias: 1
-},
+institucion: "tecno",
+grado: "3",
+grupo: "b",
+nombre: "Jesus",
+victoria: 0
+
+
+institucion: "ujed",
+grado: 2,
+grupo: a,
+nombre: aranza,
+victoria: 0
+
+institucion: "cch",
+grado: 3,
+grupo: 4,
+nombre: aranza,
+victoria: 0
+
+institucion: "sor juana",
+grado: 4,
+grupo: a,
+nombre: manuel,
+victoria: 0
+
+institucion: "la salle",
+grado: 6,
+grupo: c,
+nombre: pedro,
+victoria: 0
+
+institucion: "cbtis",
+grado: 1,
+grupo: a,
+nombre: maria,
+victoria: 1
+

@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const ejs = require('ejs');
 const morgan = require('morgan');
+const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.set('views', path.join(__dirname, 'views'));
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
 // Routes
 app.use('/', customerRoutes);
