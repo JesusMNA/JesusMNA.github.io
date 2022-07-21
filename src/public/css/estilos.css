@@ -14,6 +14,8 @@ body {
     background-image: url("../Imagenes/FONDOS/fondo2.png");
     background-repeat: repeat;
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 #sonido{
