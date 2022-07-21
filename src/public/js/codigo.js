@@ -598,6 +598,7 @@ function preguntar() {
 
 
 function respuestaCorrecta() {
+    speechSynthesis.cancel();
     reproducirSonidoEvento("../Sonidos/correct.wav");
     dibujarSubir();
     if(direccion == "ARRIBA") {
@@ -650,6 +651,7 @@ function respuestaCorrecta() {
 }
 
 function respuestaIncorrecta() {
+    speechSynthesis.cancel();
     reproducirSonidoEvento("../Sonidos/error.wav");
     dibujarBajar();
     if(direccion == "ABAJO") {
@@ -1207,6 +1209,7 @@ player4.addEventListener("transitionend", () => {
 })
 
 dado.addEventListener("click", () => {
+    speechSynthesis.cancel();
     let random = Math.floor((Math.random() * (6 - 1 + 1)) + 1);
     let textoDecirCara = `Avanzar ${random} casillas`;
     if (random == 1) {
@@ -1239,6 +1242,7 @@ dado.addEventListener("click", () => {
 })
 
 async function ganador() {
+    speechSynthesis.cancel();
     sonido.pause();
     reproducirSonidoEvento("../Sonidos/ganador.wav");
     mGanador.classList.add("modal-ganador--show");
@@ -1415,6 +1419,9 @@ bSiguiente.addEventListener("click", () => {
             body.style.backgroundImage = 'url("../Imagenes/FONDOS/fondo4.png")';
             pPersonajes.classList.remove("datos--show");
             pFondo.classList.add("fondo--show");
+            if (screen.width < 700) {
+                alert("Gira tu celular horizontalmente para una mejor experiencia de juego");
+            }
             nJugador = 1;
             decir(`Turno de ${jugador1.nombre}`);
         }

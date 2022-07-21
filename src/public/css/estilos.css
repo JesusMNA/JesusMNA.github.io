@@ -153,7 +153,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #fff;
+    color: #000;
 }
 
 .jugadores-opciones div {
@@ -188,9 +188,11 @@ body {
     height: 45px;
     border: none;
     background-color:  transparent;
+    background-image: url("../Imagenes/BOTONES/boton3.png");
+    background-position: center;
+    background-size: contain;
     text-decoration: none;
-    border: 2px solid #fff;
-    color: #fff;
+    color: #000;
     border-radius: 50px;
     font-size: 2rem;
     font-weight: bold;
@@ -233,7 +235,7 @@ body {
 .datos-form {
     width: 280px;
     padding: 12px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #fff;
     color: #fff;
     border-radius: 20px;
@@ -280,7 +282,7 @@ body {
 .datos-personajes {
     width: 230px;
     height: 180px;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.2);
     border: 2px solid #fff;
     box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 50px;
@@ -318,8 +320,10 @@ body {
     height: 45px;
     border: none;
     background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    background-image: url("../Imagenes/BOTONES/boton3.png");
+    background-position: center;
+    background-size: contain;
+    color: #000;
     border-radius: 50px;
     font-size: 2rem;
     font-weight: bold;
@@ -542,8 +546,10 @@ body {
     height: 45px;
     border: none;
     background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
+    background-image: url("../Imagenes/BOTONES/boton3.png");
+    background-position: center;
+    background-size: contain;
+    color: #000;
     border-radius: 50px;
     font-size: 2rem;
     font-weight: bold;
@@ -868,12 +874,16 @@ body {
     border-bottom: 2px solid #fff;
     background-color: rgba(0, 0, 0, 0.3);
     display: flex;
-    align-items: center;
 }
 
 .modal-ganador-contenido p {
+    display: flex;
     color: #fff;
     font-size: 1.8rem;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 20px;
+    text-align: justify;
 }
 
 .modal-ganador-contenido button {
