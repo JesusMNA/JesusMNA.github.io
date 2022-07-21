@@ -1421,6 +1421,8 @@ bSiguiente.addEventListener("click", () => {
             pFondo.classList.add("fondo--show");
             if (screen.width < 700) {
                 alert("Gira tu celular horizontalmente para una mejor experiencia de juego");
+                body.style.width = "1365px";
+                body.style.height = "4000px";
             }
             nJugador = 1;
             decir(`Turno de ${jugador1.nombre}`);
