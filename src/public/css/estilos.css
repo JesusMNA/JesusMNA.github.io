@@ -9,8 +9,6 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
     font-family: "Century Gothic", CenturyGothic;
     font-size: 1.6rem;
     background-image: url("../Imagenes/FONDOS/fondo2.png");
