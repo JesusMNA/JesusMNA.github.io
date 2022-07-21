@@ -9,6 +9,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    height: 150vh;
     font-family: "Century Gothic", CenturyGothic;
     font-size: 1.6rem;
     background-image: url("../Imagenes/FONDOS/fondo2.png");
@@ -18,9 +19,6 @@ body {
 
 #sonido{
     display: none;
-}
-
-#visitas {
 }
 
 .inicio {
@@ -1160,6 +1158,11 @@ body {
 }
 
 @media (min-width: 700px) {
+
+    body {
+        height: 100vh;
+    }
+
     .inicio {
         background-image: url('../Imagenes/FONDOS/fondopc.png');
         background-repeat: no-repeat;
@@ -1178,6 +1181,10 @@ body {
     .inicio-banner-botones button {
         width: 150px;
         height: 40px;
+    }
+
+    .inicio-banner-botones #btn-instrucciones {
+        width: 120px;
     }
 
     .division-ganador {
