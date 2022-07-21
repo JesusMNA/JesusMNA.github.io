@@ -18,7 +18,8 @@ async function agregarDatosJugadores(institucion, grado, grupo, nombre, victoria
     const res = await fetch(`https://obligacionesxescaleras.herokuapp.com/agregarJugador`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            mode: 'no-cors',
         },
         body: cuerpo
     });
