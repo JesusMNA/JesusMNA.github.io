@@ -54,7 +54,7 @@ const cuerpoListaJugadores = document.getElementById("cuerpoListaJugadores");
 const sonidoEvento = document.getElementById("eventoSonido");
 const body = document.getElementById("body");
 
-sonido.volume = 0.25;
+sonido.volume = 0.05;
 sonidoEvento.evento = 0.5;
 
 sonido.addEventListener("ended", () => {
