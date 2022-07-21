@@ -1,6 +1,6 @@
 
 async function consultarListaJugadores() {
-    const response = await fetch("http://localhost:3000/consultar");
+    const response = await fetch("https://obligacionesxescaleras.herokuapp.com/consultar");
     const data = await response.text();
     if(response.status !== 200) {
         spanError.innerHTML = "Hubo un error: " + response.status + " " + data.message;
@@ -15,7 +15,7 @@ async function agregarDatosJugadores(institucion, grado, grupo, nombre, victoria
     let cuerpoJSON = JSON.parse(cuerpo);
     console.log(cuerpoJSON);
     console.log(JSON.stringify(cuerpoJSON));
-    const res = await fetch(`http://localhost:3000/agregarJugador`, {
+    const res = await fetch(`https://obligacionesxescaleras.herokuapp.com/agregarJugador`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
