@@ -39,7 +39,7 @@ const respuesta3 = document.getElementById("respuesta3");
 const sonido = document.getElementById("sonido");
 const mGanador = document.getElementById("ganador");
 const textoGanador = document.getElementById("texto-ganador");
-const personajeGanador = document.getElementById("personaje-ganador");
+const personajeGanador = document.getElementById("imagen-personaje-ganador");
 const botonGanador = document.getElementById("boton-ganador");
 const textoRespuestaCorrecta = document.getElementById("respuestaCorrecta");
 const botonRespuestaCorrecta = document.getElementById("continuarRespuestaCorrecta");
@@ -51,12 +51,20 @@ const listaJugadores = document.getElementById("listaJugadores");
 const modalListaJugadores = document.getElementById("mListaJugadores");
 const cerrarListaJugadores = document.getElementById("cerrarListaJugadores");
 const cuerpoListaJugadores = document.getElementById("cuerpoListaJugadores");
+const sonidoEvento = document.getElementById("eventoSonido");
+const body = document.getElementById("body");
 
 sonido.volume = 0.25;
+sonidoEvento.evento = 0.5;
 
 sonido.addEventListener("ended", () => {
     sonido.play();
 });
+
+function reproducirSonidoEvento(evento) {
+    sonidoEvento.setAttribute("src", evento);
+    sonidoEvento.play();
+}
 
 botonRespuestaCorrecta.addEventListener("click", () => {
     mRespuestaCorrecta.classList.remove("modal-pregunta-incorrecta--show");
@@ -430,90 +438,102 @@ function preguntar() {
     cuadroDado.classList.remove("lanzar-dado--show");
     cuadroPregunta.classList.add("pregunta--show");
     let random = Math.floor((Math.random() * (12 - 1 + 1)) + 1);
+    let textoPregunta = "";
+    let textoRespuesta1 = "";
+    let textoRespuesta2 = "";
+    let textoRespuesta3 = "";
     if(random == 1) {
-        pregunta.innerHTML = "Se refiere a que toda la ciudadanía tiene derecho a elegir a sus representantes, sin importar su sexo, identidad, color de piel, condición económica, entre otras características."
-        respuesta1.innerHTML = "Universal";
-        respuesta2.innerHTML = "Libre";
-        respuesta3.innerHTML = "Condicionado";
+        textoPregunta = "Se refiere a que toda la ciudadanía tiene derecho a elegir a sus representantes, sin importar su sexo, identidad, color de piel, condición económica, entre otras características.";
+        textoRespuesta1 = "Universal";
+        textoRespuesta2 = "Libre";
+        textoRespuesta3 = "Condicionado";
         Respuesta = 1;
     }
     else if(random == 2) {
-        pregunta.innerHTML = "Es la garantía que tiene la ciudadanía al elegir. Nadie podrá saber el sentido de su voto a menos de que la misma persona lo diga."
-        respuesta1.innerHTML = "Personal";
-        respuesta2.innerHTML = "Secreto";
-        respuesta3.innerHTML = "Intransferible";
+        textoPregunta = "Es la garantía que tiene la ciudadanía al elegir. Nadie podrá saber el sentido de su voto a menos de que la misma persona lo diga.";
+        textoRespuesta1 = "Personal";
+        textoRespuesta2 = "Secreto";
+        textoRespuesta3 = "Intransferible";
         Respuesta = 2;
     }
     else if(random == 3) {
-        pregunta.innerHTML = "Se refiere a que la ciudadanía podrá votar directamente por el candidato o candidata que ejercerá el cargo de elección popular por el que se postula"
-        respuesta1.innerHTML = "Directo";
-        respuesta2.innerHTML = "Intransferible";
-        respuesta3.innerHTML = "Voluntario"
+        textoPregunta = "Se refiere a que la ciudadanía podrá votar directamente por el candidato o candidata que ejercerá el cargo de elección popular por el que se postula";
+        textoRespuesta1 = "Directo";
+        textoRespuesta2 = "Intransferible";
+        textoRespuesta3 = "Voluntario";
         Respuesta = 1;
     }
     else if(random == 4) {
-        pregunta.innerHTML = "La ley indica que el voto deberá ejercerse solo por una persona, sin que otra persona o grupo pueda hacerlo a su nombre."
-        respuesta1.innerHTML = "Directo";
-        respuesta2.innerHTML = "Personal";
-        respuesta3.innerHTML = "Libre";
+        textoPregunta = "La ley indica que el voto deberá ejercerse solo por una persona, sin que otra persona o grupo pueda hacerlo a su nombre.";
+        textoRespuesta1 = "Directo";
+        textoRespuesta2 = "Personal";
+        textoRespuesta3 = "Libre";
         Respuesta = 2;
     }
     else if(random == 5) {
-        pregunta.innerHTML = "Es una característica del voto que protegen las leyes mexicanas y consiste en que nadie podrá darle los votos que obtuvo un candidato, a otro."
-        respuesta1.innerHTML = "Condicionado";
-        respuesta2.innerHTML = "Razonado";
-        respuesta3.innerHTML = "Intransferible";
+        textoPregunta = "Es una característica del voto que protegen las leyes mexicanas y consiste en que nadie podrá darle los votos que obtuvo un candidato, a otro.";
+        textoRespuesta1 = "Condicionado";
+        textoRespuesta2 = "Razonado";
+        textoRespuesta3 = "Intransferible";
         Respuesta = 3;
     }
     else if(random == 6) {
-        pregunta.innerHTML = "Se refiere a que la ciudadanía ejerza este derecho sin presiones ni influencia de otras personas."
-        respuesta1.innerHTML = "Razonado";
-        respuesta2.innerHTML = "Libre";
-        respuesta3.innerHTML = "Condicionado";
+        textoPregunta = "Se refiere a que la ciudadanía ejerza este derecho sin presiones ni influencia de otras personas.";
+        textoRespuesta1 = "Razonado";
+        textoRespuesta2 = "Libre";
+        textoRespuesta3 = "Condicionado";
         Respuesta = 2
     }
     else if(random == 7) {
-        pregunta.innerHTML = "Es un tipo de voto que se pone a disposición de la ciudadanía con el propósito de que aquellos que quieran asistir, lo hagan motivados por el solo hecho de elegir."
-        respuesta1.innerHTML = "Obligatorio";
-        respuesta2.innerHTML = "Voluntario";
-        respuesta3.innerHTML = "Universal";
+        textoPregunta = "Es un tipo de voto que se pone a disposición de la ciudadanía con el propósito de que aquellos que quieran asistir, lo hagan motivados por el solo hecho de elegir.";
+        textoRespuesta1 = "Obligatorio";
+        textoRespuesta2 = "Voluntario";
+        textoRespuesta3 = "Universal";
         Respuesta = 2;
     }
     else if(random == 8) {
-        pregunta.innerHTML = "Se refiere a la obligación que tiene la ciudadanía de acudir a emitir su voto, ya que de no hacerlo, las autoridades podrían sancionarles."
-        respuesta1.innerHTML = "Condicionado";
-        respuesta2.innerHTML = "Voluntario";
-        respuesta3.innerHTML = "Obligatorio";
+        textoPregunta = "Se refiere a la obligación que tiene la ciudadanía de acudir a emitir su voto, ya que de no hacerlo, las autoridades podrían sancionarles, en México no es así";
+        textoRespuesta1 = "Condicionado";
+        textoRespuesta2 = "Voluntario";
+        textoRespuesta3 = "Obligatorio";
         Respuesta = 3;
     }
     else if(random == 9) {
-        pregunta.innerHTML = "Es una de las características principales del voto, ya que, si se eligen autoridades, el acceso al voto no debe estar condicionado a algún pago por parte de la ciudadanía."
-        respuesta1.innerHTML = "Gratuito";
-        respuesta2.innerHTML = "Libre";
-        respuesta3.innerHTML = "Directo";
+        textoPregunta = "Es una de las características principales del voto, ya que, si se eligen autoridades, el acceso al voto no debe estar condicionado a algún pago por parte de la ciudadanía.";
+        textoRespuesta1 = "Gratuito";
+        textoRespuesta2 = "Libre";
+        textoRespuesta3 = "Directo";
         Respuesta = 1;
     }
     else if(random == 10) {
-        pregunta.innerHTML = "Es un tipo de voto que va en contra de los valores democráticos y consiste en que la persona electora se compromete a votar por alguien a cambio de algo."
-        respuesta1.innerHTML = "Obligatorio";
-        respuesta2.innerHTML = "Condicionado";
-        respuesta3.innerHTML = "Directo";
+        textoPregunta = "Es un tipo de voto que va en contra de los valores democráticos y consiste en que la persona electora se compromete a votar por alguien a cambio de algo.";
+        textoRespuesta1 = "Obligatorio";
+        textoRespuesta2 = "Condicionado";
+        textoRespuesta3 = "Directo";
         Respuesta = 2;
     }
     else if(random == 11) {
-        pregunta.innerHTML = "Es una característica no incluida en las leyes, pero que invita a las personas electoras a votar conociendo el perfil de los candidatos o candidatas"
-        respuesta1.innerHTML = "Libre";
-        respuesta2.innerHTML = "Condicionado";
-        respuesta3.innerHTML = "Informado";
+        textoPregunta = "Es una característica no incluida en las leyes, pero que invita a las personas electoras a votar conociendo el perfil de los candidatos o candidatas";
+        textoRespuesta1 = "Libre";
+        textoRespuesta2 = "Condicionado";
+        textoRespuesta3 = "Informado";
         Respuesta = 3;
     }
     else if(random == 12) {
-        pregunta.innerHTML = "Es la invitación que se hace a la persona electora a reflexionar antes de votar."
-        respuesta1.innerHTML = "Voluntario";
-        respuesta2.innerHTML = "Directo";
-        respuesta3.innerHTML = "Razonado";
+        textoPregunta = "Es la invitación que se hace a la persona electora a reflexionar antes de votar.";
+        textoRespuesta1 = "Voluntario";
+        textoRespuesta2 = "Directo";
+        textoRespuesta3 = "Razonado";
         Respuesta = 3;
     }
+    pregunta.innerHTML = textoPregunta;
+    decir(textoPregunta);
+    respuesta1.innerHTML = textoRespuesta1;
+    decir(textoRespuesta1);
+    respuesta2.innerHTML = textoRespuesta2;
+    decir(textoRespuesta2);
+    respuesta3.innerHTML = textoRespuesta3;
+    decir(textoRespuesta3);
     if (nJugador === 1) {
         pJugador.innerHTML = `Pregunta para ${jugador1.nombre}`;
         if (jugador1.personaje == "../Imagenes/PERSONAJES/CHICO 1/chico 1-02.png") {
@@ -578,8 +598,10 @@ function preguntar() {
 
 
 function respuestaCorrecta() {
+    reproducirSonidoEvento("../Sonidos/correct.wav");
     dibujarSubir();
     if(direccion == "ARRIBA") {
+        reproducirSonidoEvento("../Sonidos/ladder.wav");
         if (nJugador == 1) {
             player1.style.top = `${(player1.offsetTop + cantidad)}px`;
             jugador1.posicion = posicionTemporal;
@@ -603,7 +625,7 @@ function respuestaCorrecta() {
     }
     else {
         nJugador++;
-        if (nJugador === 5) {
+        if (nJugador > numeroJugadores) {
             nJugador = 1;
         }
         if (nJugador === 1) {
@@ -628,8 +650,10 @@ function respuestaCorrecta() {
 }
 
 function respuestaIncorrecta() {
+    reproducirSonidoEvento("../Sonidos/error.wav");
     dibujarBajar();
     if(direccion == "ABAJO") {
+        reproducirSonidoEvento("../Sonidos/serpent.wav");
         if (nJugador == 1) {
             player1.style.top = `${(player1.offsetTop - cantidad)}px`;
             jugador1.posicion = posicionTemporal;
@@ -653,7 +677,7 @@ function respuestaIncorrecta() {
     }
     else {
         nJugador++;
-        if (nJugador === 5) {
+        if (nJugador > numeroJugadores) {
             nJugador = 1;
         }
         if (nJugador === 1) {
@@ -1143,15 +1167,15 @@ function avanzar() {
             }
         }
         nJugador++;
-        if(nJugador === 2 && numeroJugadores > 1) {
+        if(nJugador == 2 && numeroJugadores > 1) {
             turnoNombre.innerText = `Turno de ${jugador2.nombre}`;
             decir(`Turno de ${jugador2.nombre}`);
         }
-        else if(nJugador === 3 && numeroJugadores > 2) {
+        else if(nJugador == 3 && numeroJugadores > 2) {
             turnoNombre.innerText = `Turno de ${jugador3.nombre}`;
             decir(`Turno de ${jugador3.nombre}`);
         }
-        else if(nJugador === 4 && numeroJugadores > 3) {
+        else if(nJugador == 4 && numeroJugadores > 3) {
             turnoNombre.innerText = `Turno de ${jugador4.nombre}`;
             decir(`Turno de ${jugador4.nombre}`);
         }
@@ -1215,75 +1239,78 @@ dado.addEventListener("click", () => {
 })
 
 async function ganador() {
+    sonido.pause();
+    reproducirSonidoEvento("../Sonidos/ganador.wav");
     mGanador.classList.add("modal-ganador--show");
     if (nJugador === 1) {
         jugador1.victoria = 1;
-        textoGanador.innerHTML = `¡Felicidades ${jugador1.nombre}! eres el ganador`;
-        decir(`¡Felicidades ${jugador1.nombre}! eres el ganador`);
+        textoGanador.innerHTML = `¡Felicidades ${jugador1.nombre} ganaste!`;
+        decir(`¡Felicidades ${jugador1.nombre} ganaste!`);
         if (jugador1.personaje == "../Imagenes/PERSONAJES/CHICO 1/chico 1-02.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png");
         }
         else if (jugador1.personaje == "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png");
         }
         else if(jugador1.personaje == "../Imagenes/PERSONAJES/CHICO 2/chico 2-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png");
         }
         else if(jugador1.personaje == "../Imagenes/PERSONAJES/CHICO 4/chica 4-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png");
         }
     }
     if (nJugador === 2) {
         jugador2.victoria = 1;
-        textoGanador.innerHTML = `¡Felicidades ${jugador2.nombre}! eres el ganador`;
-        decir(`¡Felicidades ${jugador2.nombre}! eres el ganador`);
+        textoGanador.innerHTML = `¡Felicidades ${jugador2.nombre} ganaste!`;
+        decir(`¡Felicidades ${jugador2.nombre} ganaste!`);
         if (jugador2.personaje == "../Imagenes/PERSONAJES/CHICO 1/chico 1-02.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png");
         }
         else if (jugador2.personaje == "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png");
         }
         else if(jugador2.personaje == "../Imagenes/PERSONAJES/CHICO 2/chico 2-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png");
         }
         else if(jugador2.personaje == "../Imagenes/PERSONAJES/CHICO 4/chica 4-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png");
         }
     }
     if (nJugador === 3) {
         jugador3.victoria = 1;
-        textoGanador.innerHTML = `¡Felicidades ${jugador3.nombre}! eres el ganador`;
-        decir(`¡Felicidades ${jugador3.nombre}! eres el ganador`);
+        textoGanador.innerHTML = `¡Felicidades ${jugador3.nombre} ganaste!`;
+        decir(`¡Felicidades ${jugador3.nombre} ganaste!`);
         if (jugador3.personaje == "../Imagenes/PERSONAJES/CHICO 1/chico 1-02.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png");
         }
         else if (jugador3.personaje == "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png");
         }
         else if(jugador3.personaje == "../Imagenes/PERSONAJES/CHICO 2/chico 2-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png");
         }
         else if(jugador3.personaje == "../Imagenes/PERSONAJES/CHICO 4/chica 4-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png");
         }
     }
     if (nJugador === 4) {
         jugador4.victoria = 1;
-        textoGanador.innerHTML = `¡Felicidades ${jugador4.nombre}! eres el ganador`;
-        decir(`¡Felicidades ${jugador4.nombre}! eres el ganador`);
+        textoGanador.innerHTML = `¡Felicidades ${jugador4.nombre} ganaste!`;
+        decir(`¡Felicidades ${jugador4.nombre} ganaste!`);
         if (jugador4.personaje == "../Imagenes/PERSONAJES/CHICO 1/chico 1-02.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 1/chico 1_Mesa de trabajo 1.png");
         }
         else if (jugador4.personaje == "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-09.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 3/chica 3 todos-05.png");
         }
         else if(jugador4.personaje == "../Imagenes/PERSONAJES/CHICO 2/chico 2-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 2/chico 2-03.png");
         }
         else if(jugador4.personaje == "../Imagenes/PERSONAJES/CHICO 4/chica 4-05.png") {
-            personajeGanador.style.backgroundImage = 'url("../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png")';
+            personajeGanador.setAttribute("src", "../Imagenes/PERSONAJES/CHICO 4/chica 4_Mesa de trabajo 1.png");
         }
     }
+    decir("¡Gracias por participar! Al final de este año, el participante y la institución educativa que reúnan más jugadas ganarán un premio que será entregado por el IEPC, así que puedes jugar las veces que quieras e invitar a tus compañeros y compañeras de clase a participar.")
     if(numeroJugadores == 1) {
         await agregarDatosJugadores((jugador1.institucion).toLowerCase(), jugador1.grado, (jugador1.grupo).toLowerCase(), (jugador1.nombre).toLowerCase(), jugador1.victoria);
     }
@@ -1319,6 +1346,7 @@ jugarI.addEventListener("click", (e) => {
     }
     pJugadores.classList.remove("jugadores--show");
     pPersonajes.classList.add("datos--show")
+    body.style.backgroundImage = 'url("../Imagenes/FONDOS/fondo3.png")';
 });
 
 bSiguiente.addEventListener("click", () => {
@@ -1384,6 +1412,7 @@ bSiguiente.addEventListener("click", () => {
             player4.style.backgroundImage = `url('${jugador4.personaje}')`;
         }
         if (nJugador == numeroJugadores) {
+            body.style.backgroundImage = 'url("../Imagenes/FONDOS/fondo4.png")';
             pPersonajes.classList.remove("datos--show");
             pFondo.classList.add("fondo--show");
             nJugador = 1;

@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 
-<body>
+<body id="body">
     <audio src="./Sonidos/Carnival De Brazil.mp3" id="sonido"></audio>
+    <audio src="" id="eventoSonido"></audio>
     <section class="inicio inicio--show" id="modal-inicio">
         <div class="inicio-banner">
-            <button id="listaJugadores">Jugadores</button>
-            <center id="visitas">
-                <img style="border: 0px solid; display: inline;" src="https://websmultimedia.com/contador-de-visitas.php?id=3580">
-            </center>
+            <button id="listaJugadores"></button>
             <div class="inicio-banner-botones">
-                <button id="btn-iniciar">Iniciar</button>
+                <center id="visitas">
+                    <img style="border: 0px solid; display: inline;" src="https://websmultimedia.com/contador-de-visitas.php?id=3580">
+                </center>
+                <button id="btn-iniciar"></button>
                 <button id="btn-instrucciones">Instrucciones</button>
             </div>
         </div>
@@ -147,17 +148,21 @@
         </div>
     </section>
 
-    <section class="modal-ganador" id="ganador">
+    <section class="modal-ganador modal-ganador--sow" id="ganador">
         <div class="modal-ganador-contenido">
-            <h1 id="texto-ganador">¡Felicidades Jesus! eres el ganador</h1>
-            <div id="personaje-ganador"></div>
-            <div id="parrafo-ganador">
-                <p>
-                    ¡Gracias por participar! Al final de este año, el
-                    participante y la institución educativa que reúnan más jugadas ganarán un premio que será
-                    entregado por el IEPC, así que puedes jugar las veces que quieras e invitar a tus compañeros y
-                    compañeras de clase a participar.
-                </p>
+            <h1 id="texto-ganador"></h1>
+            <div class="division-ganador">
+                <div id="personaje-ganador">
+                    <img src="" alt="personaje ganador" id="imagen-personaje-ganador">
+                </div>
+                <div id="parrafo-ganador">
+                    <p>
+                        ¡Gracias por participar! Al final de este año, el
+                        participante y la institución educativa que reúnan más jugadas ganarán un premio que será
+                        entregado por el IEPC, así que puedes jugar las veces que quieras e invitar a tus compañeros y
+                        compañeras de clase a participar.
+                    </p>
+                </div>
             </div>
             <button id="boton-ganador">Continuar</button>
         </div>
@@ -178,26 +183,12 @@
             </div>
             <div class="modal-instrucciones-panel__parrafo">
                 <p>
-                    1- Presiona el botón iniciar <br>
-                    2- En esta pantalla selecciona el numero de jugadores que estarán en la partida <br>
-                    3- Después de asegurarte de que el circulo azul este en el número de jugadores deseado presiona Jugar <br>
-                    4- En esta pantalla llenaras los datos con tu información  <br>
-                    5- Recuerda llenar correctamente los datos para poder participar por un premio <br>
-                    6- Elige uno de los cuatro personajes haciendo clic sobre él. <br>
-                    7- No puede haber personajes repetidos. <br>
-                    8- Después de que te hayas asegurado de llenar tu información correctamente presiona siguiente. <br>
-                    9- Si hay mas de un jugador la pantalla se repetirá hasta que todos los jugadores hayan puesto su información. <br>
-                    10- Después de que todos los jugadores hayan llenado su información se mostrará el tablero de juego. <br>
-                    11- Si estas en celular gira tu celular horizontalmente para una mejor experiencia de juego. <br>
-                    12- Los personajes se mostrarán en la casilla numero uno (arriba a la izquierda). <br>
-                    13- Para poder avanzar presiona el botón Lanzar dado (abajo a la derecha). <br>
-                    14- Arriba del recuadro de la derecha se mostrará el turno del jugador. <br>
-                    15- Después de presionar el botón Lanzar dado se mostrará un dado con el numero de casillas que el personaje avanzará. <br>
-                    16- Si caemos en una escalera o una serpiente el recuadro de la derecha cambiará por uno que tiene una pregunta y tres respuestas. <br>
-                    17- Si presionamos el botón con la respuesta correcta nuestro personaje subirá por la escalera o se salvará de bajar por la serpiente. <br>
-                    18- Si presionamos el botón con una respuesta incorrecta nuestro personaje no subirá por la escalera o bajará por la serpiente. <br>
-                    19- Para poder ganar el juego hay que llegar a la casilla 60. <br>
-                    20- Si vas a volver a jugar el juego, recuerda poner tu nombre, institución, grado y grupo de la misma forma que las veces anteriores. <br>
+                    1. Presiona el botón iniciar, registra el número de jugadores, pulsa la opción “jugar”. <br/> <br/>
+                    2. Ingresa tus datos de tu escuela, elige el personaje de tu preferencia y presiona el botón “siguiente”. Si no ingresas los datos, no podrás jugar. <br/> <br/>
+                    3. Aparecerá tu nombre y tu personaje en el  tablero del juego. <br/> <br/>
+                    4. Tu personaje se encontrará en la casilla número 1. Para avanzar de posición, presiona el botón “lanzar dado” cada vez que escuches tu turno. <br/> <br/>
+                    5. Tu personaje avanzará automáticamente el número de casillas que indique el dado. Si caes en una escalera, deberás contestar una pregunta para poder saltar y avanzar a otra casilla, de lo contrario, no podrás avanzar. Si caes en una serpiente, deberás contestar correctamente una pregunta para evitar retroceder de casilla, si te equivocas permanecerás en la misma casilla. <br/> <br/>
+                    6. Ganarás el juego si llegas a la casilla número 60. <br/> <br/> 
                 </p>
             </div>
             <div class="modal-instrucciones-panel__boton">

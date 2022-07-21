@@ -35,3 +35,27 @@ grupo: a,
 nombre: maria,
 victoria: 1
 
+institucion: "fdsa",
+grado: fdsa,
+grupo: fa,
+nombre: fsa,
+victoria: 1
+
+institucion: "fads",
+grado: fa,
+grupo: fa,
+nombre: das,
+victoria: 0
+
+institucion: "fdsa",
+grado: fdsa,
+grupo: fdsa,
+nombre: fdas,
+victoria: 1
+
+institucion: "dsa",
+grado: fdas,
+grupo: fdsa,
+nombre: 1,
+victoria: 0
+

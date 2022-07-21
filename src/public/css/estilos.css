@@ -9,9 +9,11 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Century Gothic", CenturyGothic;
     font-size: 1.6rem;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondo2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #sonido{
@@ -19,7 +21,6 @@ body {
 }
 
 #visitas {
-    margin-right: 150px;
 }
 
 .inicio {
@@ -57,7 +58,7 @@ body {
     position: relative;
 }
 
-.inicio-banner button {
+/* .inicio-banner button {
     width: 100px;
     background-color: transparent;
     position: absolute;
@@ -68,22 +69,24 @@ body {
     color: #fff;
     text-decoration: underline;
     cursor: pointer;
-}
+} */
 
 .inicio-banner-botones {
     height: 150px;
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    justify-items: end;
     align-items: center;
 }
 
 .inicio-banner-botones button{
     width: 130px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.4);
+    height: 30px;
     cursor: pointer;
-    border: 3px solid rgb(227, 16, 16);
+    background-image: url('../Imagenes/BOTONES/iniciar.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 10px;
     color: #fff;
     font-size: 2rem;
@@ -93,13 +96,14 @@ body {
 
 .inicio-banner-botones #btn-instrucciones {
     width: 100px;
-    height: 35px;
+    height: 25px;
     background-color: rgba(0, 0, 0, 0.4);
     border: none;
     border-bottom: 2px solid #fff;
-    margin-top: 8px;
-    margin-bottom: 20px;
+    margin-top: 4px;
+    margin-bottom: 33px;
     font-size: 1.6rem;
+    background-image: none;
 }
 
 .inicio-banner button:hover {
@@ -109,7 +113,7 @@ body {
 .jugadores {
     width: 100%;
     height: 100vh;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondo2.png");
     display: none;
     flex-direction: column;
     align-items: center;
@@ -156,7 +160,10 @@ body {
     width: 260px;
     height: 45px;
     margin-bottom: 20px;
-    background-color: transparent;
+    background-image: url("../Imagenes/BOTONES/boton2.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 50px;
     border: 2px solid #fff;
     box-shadow: 4px 3px 2px 1px rgba(0, 0, 0, 0.2);
@@ -248,10 +255,11 @@ body {
     border-bottom: 2px solid #fff;
     font-size: 1.8rem;
     margin-bottom: 12px;
+    color: #fff;
 }
 
 .datos-form__input::placeholder {
-    color: #111;
+    color: #fff;
 }
 
 .datos-form__input:hover {
@@ -394,7 +402,7 @@ body {
     height: 250px;
     background-image: url("../Imagenes/SERPIENTES/Serpientes\ y\ escaleras-02.png");
     top: 350px;
-    left: 650px;
+    left: 643px;
 }
 
 #escalera2 {
@@ -408,14 +416,14 @@ body {
     height: 350px;
     background-image: url("../Imagenes/SERPIENTES/Serpientes\ y\ escaleras-04.png");
     top: 60px;
-    left: 807px;
+    left: 797px;
 }
 
 #escalera4 {
     height: 350px;
     background-image: url("../Imagenes/SERPIENTES/Serpientes\ y\ escaleras-04.png");
     top: 95px;
-    left: 70px;
+    left: 78px;
 }
 
 #escalera5 {
@@ -784,6 +792,10 @@ body {
     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.5);
 }
 
+#listaJugadores {
+    display: none;
+}
+
 .modal-ganador {
     position: fixed;
     top: 0;
@@ -810,7 +822,7 @@ body {
     width: 80%;
     min-width: 300px;
     height: 90vh;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondoganador.png");
     background-position: center;
     background-size: cover;
     border-radius: 20px;
@@ -827,13 +839,26 @@ body {
     font-size: 2.4rem;
 }
 
-.modal-ganador-contenido #personaje-ganador {
-    width: 130px;
-    height: 130px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-image: url("../Imagenes/PERSONAJES/CHICO\ 1/chico 1-02.png");
+.division-ganador {
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.division-ganador #personaje-ganador {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.division-ganador #personaje-ganador img {
+    width: 143px;
+    height: 143px;
 }
 
 .modal-ganador-contenido #parrafo-ganador {
@@ -843,6 +868,8 @@ body {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
     background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
 }
 
 .modal-ganador-contenido p {
@@ -891,7 +918,7 @@ body {
     width: 80vw;
     height: 90vh;
     min-width: 300px;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondo2.png");
     background-position: center;
     background-size: cover;
     border-radius: 20px;
@@ -955,7 +982,7 @@ body {
     width: 80%;
     min-width: 300px;
     height: 90vh;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondo2.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1042,7 +1069,7 @@ body {
     width: 80%;
     min-width: 300px;
     height: 90vh;
-    background-image: url("../Imagenes/FONDOS/FONDO_Mesa\ de\ trabajo\ 1.png");
+    background-image: url("../Imagenes/FONDOS/fondo2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1126,4 +1153,59 @@ body {
 
 .mLista-jugadores-contenido__cierre button:hover {
     box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.9);
+}
+
+.eventoSonido {
+    display: none;
+}
+
+@media (min-width: 700px) {
+    .inicio {
+        background-image: url('../Imagenes/FONDOS/fondopc.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .inicio-banner {
+        background-image: url("");
+    }
+
+    .inicio-banner-botones {
+        height: 140px;
+    }
+
+    .inicio-banner-botones button {
+        width: 150px;
+        height: 40px;
+    }
+
+    .division-ganador {
+        flex-direction: row;
+    }
+
+    .modal-ganador-contenido h1 {
+        font-size: 3rem;
+    }
+
+    .division-ganador #personaje-ganador {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .division-ganador #personaje-ganador img {
+        width: 270px;
+        height: 270px;
+    }
+
+    .division-ganador #parrafo-ganador {
+        width: 50%;
+        height: 280px;
+    }
+
+    .division-ganador #parrafo-ganador p {
+        font-size: 2.5rem;
+    }
 }
